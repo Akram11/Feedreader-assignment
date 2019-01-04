@@ -52,9 +52,18 @@ $(function() {
       /* This test ensures the menu element is
        * hidden by default.
        */
-      it('menu is hidden',function() {
+      it('is hidden on load',function() {
         let body =  document.querySelector('body');
         expect(body.classList.contains('menu-hidden')).toBe(true);
+      });
+
+      it('toggles visibility on click', function() {
+        let menuIcon = document.querySelector('.menu-icon-link');
+        let body =  document.querySelector('body');
+
+        if(menuIcon.click()){
+        expect(menuIcon.classList.contains('menu-hidden')).toBe(false);
+      }
       });
 
     });
