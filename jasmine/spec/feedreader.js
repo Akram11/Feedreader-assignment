@@ -61,9 +61,11 @@ $(function() {
         let menuIcon = document.querySelector('.menu-icon-link');
         let body =  document.querySelector('body');
 
-        if(menuIcon.click()){
-        expect(menuIcon.classList.contains('menu-hidden')).toBe(false);
-      }
+        menuIcon.click();
+        expect(body.classList.contains('menu-hidden')).toBe(false);
+
+        menuIcon.click();
+        expect(body.classList.contains('menu-hidden')).toBe(true);
       });
 
     });
